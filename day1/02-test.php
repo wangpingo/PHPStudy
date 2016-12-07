@@ -12,6 +12,7 @@
 	//eval 把一个字符串变成对象(js)
 	//serialize(php) 
 	//$_server->
+	//isnumeric
 	if(isset($_GET['sub'])){
 		$year=$_GET['year'];
 		echo $year;
