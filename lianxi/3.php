@@ -60,7 +60,7 @@
 						<td><input id="num2" name="num2" type="text"/ value=<?php if($num2){echo $num2;} ?>></td>
 						<td><input type="submit" value="计算" name="sub"/></td>
 						</tr>
-				<tr><td id="sum"><?php echo $sum;?></td></tr>
+				<tr><td id="sum">	<?php echo $sum;?></td></tr>
 			</table>
 		</form>
 		</div>
@@ -71,8 +71,7 @@
 		num1.onblur=num2.onblur=function(){
 			var str=this.value;
 				 if(isNaN(str)) { 
-				 	document.getElementById('sum').innerHtml="输入的不是个数字！！";
-				 	alert(document.getElementById('sum').innerHtml)
+				 	document.getElementById('sum').innerHTML="输入的不是个数字！！";
 				 	}
 		}
 	</script>
