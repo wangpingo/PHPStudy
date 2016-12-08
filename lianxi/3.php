@@ -1,5 +1,5 @@
 <?php
-	    if(isset($_POST['sub'])){
+	    if(isset($_POST['submit'])){
         $num1=$_POST['num1'];
         $num2=$_POST['num2'];
         $ysf=$_POST['ysf'];
@@ -57,10 +57,10 @@
 								<option value="/"  <?php if($ysf=='/'){echo 'selected';}?>>/</option>
 							</select>
 							</td>
-						<td><input name="num2" type="text"/ value=<?php if($num1){echo $num1;} ?>></td>
+						<td><input name="num2" type="text"/ value=<?php if($num2){echo $num2;} ?>></td>
 						<td><input type="submit" value="计算"/></td>
 						</tr>
-				<tr><td></td></tr>
+				<tr><td><?php echo $sum;?></td></tr>
 			</table>
 		</form>
 		</div>
