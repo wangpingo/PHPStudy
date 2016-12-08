@@ -1,5 +1,5 @@
 <?php
-	    if(isset($_POST['submit'])){
+	    if(isset($_POST['sub'])){
         $num1=$_POST['num1'];
         $num2=$_POST['num2'];
         $ysf=$_POST['ysf'];
@@ -48,7 +48,7 @@
 			<form id="menu" method="post" action="/PHPStudy/lianxi/3.php">
 			<table border="10px">
 						<tr>
-						<td><input name="num1" type="text" value=<?php if($num1){echo $num1;}?>></td>
+						<td><input id='num1'name="num1" type="text" value=<?php if($num1){echo $num1;}?>></td>
 						<td>
 							<select name="ysf">
 								<option value="+"  <?php if($ysf=='+'){echo 'selected';}?>>+</option>
@@ -57,12 +57,23 @@
 								<option value="/"  <?php if($ysf=='/'){echo 'selected';}?>>/</option>
 							</select>
 							</td>
-						<td><input name="num2" type="text"/ value=<?php if($num2){echo $num2;} ?>></td>
-						<td><input type="submit" value="计算"/></td>
+						<td><input id="num2" name="num2" type="text"/ value=<?php if($num2){echo $num2;} ?>></td>
+						<td><input type="submit" value="计算" name="sub"/></td>
 						</tr>
-				<tr><td><?php echo $sum;?></td></tr>
+				<tr><td id="sum"><?php echo $sum;?></td></tr>
 			</table>
 		</form>
 		</div>
 	</body>
+	<script>
+		var num1=document.getElementById('num1');
+		var num2=document.getElementById('num2');
+		num1.onblur=num2.onblur=function(){
+			var str=this.value;
+				 if(isNaN(str)) { 
+				 	document.getElementById('sum').innerHtml="输入的不是个数字！！";
+				 	alert(document.getElementById('sum').innerHtml)
+				 	}
+		}
+	</script>
 </html>
