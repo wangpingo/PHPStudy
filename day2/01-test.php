@@ -41,7 +41,7 @@
 	next();
 	prev();
 	end();
-	while ($a =each($user)) {
+	while (each($user)) {
 			
 	}
 ?>
